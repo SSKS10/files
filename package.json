@@ -9,10 +9,9 @@
     "mysql": "^2.18.1",
     "connect": "^3.7.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "node voting.js"
+    "start": "node voting.js"
   },
-  "author": "",
+  "author": "shreyas",
   "license": "ISC"
 }
