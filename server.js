@@ -13,7 +13,7 @@ var con = mysql.createConnection({
   database: "voting"
 });
 
-app.post('/for_vote',function(req, res) {
+app.post('/url',function(req, res) {
 	var json_data=req.body;
 	//console.log(json_data)
 	var result=[]
@@ -27,7 +27,7 @@ app.post('/for_vote',function(req, res) {
 		    if (err) throw err;
 		  });
 	});
-	return res.redirect('/first_page.html')
+	return res.redirect('/index.html')
 })
 app.listen(port, function() {
   console.log('Server running at http://127.0.0.1:'+port);
