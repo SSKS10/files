@@ -5,14 +5,16 @@ const app     = express();
 const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());
-app.use(express.static(__dirname+'/public'));
+app.use(express.static(__dirname+'/client'));
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "shreyas10",
   database: "voting"
 });
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client', 'index.html'));
+});
 app.post('/url',function(req, res) {
 	var json_data=req.body;
 	//console.log(json_data)
