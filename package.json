@@ -2,7 +2,7 @@
   "name": "yuva",
   "version": "1.0.0",
   "description": "for voting",
-  "main": "index.html",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect": "^3.7.0",
