@@ -2,6 +2,7 @@ var mysql = require('mysql');
 var express = require('express');
 var bodyParser = require('body-parser');
 const app     = express();
+const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
@@ -28,6 +29,6 @@ app.post('/for_vote',function(req, res) {
 	});
 	return res.redirect('/first_page.html')
 })
-app.listen(3360, function() {
-  console.log('Server running at http://127.0.0.1:3360/');
+app.listen(port, function() {
+  console.log('Server running at http://127.0.0.1:'+port);
 });
