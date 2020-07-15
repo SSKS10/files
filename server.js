@@ -60,7 +60,7 @@ app.post('/resi',function(req, res) {
       }
 
       str=link+str+row+'</table><br>';
-      str=str+'<form action="/index.html"><input type="submit" value="Submit"></form>';
+      str=str+'<form action="/index.html"><input type="submit" value="Home"></form>';
       return res.send(h+str);
       //console.log(csvData);
     });
