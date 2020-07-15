@@ -33,11 +33,11 @@ app.post('/url',function(req, res) {
 app.post('/resi',function(req, res) {
 	var csvData=[];
 	fs.createReadStream('./out.csv')
-    .pipe(parse({delimiter: ':',from_line:2}))
+    .pipe(parse({delimiter: ':',from_line:1}))
     .on('data', function(csvrow) {
-        row= csvrow[0].split('\n');
-       //console.log(row.length);
-
+        //row= csvrow[0].split('');
+        row=csvrow;
+        //console.log(row);
         for(let x=0;x<row.length;x++)
         	if (row[x]!='')
         		csvData.push(row[x].split(','));
@@ -45,7 +45,7 @@ app.post('/resi',function(req, res) {
     })
     .on('end',function() {
       //do something with csvData'
-      let link='<link rel="stylesheet" href="./style.css">';
+      //let link='<link rel="stylesheet" href="./style.css">';
       let h='<h1> Result </h1>';
       let str= '<table>';
       let row='<tr><th>Code</th><th>Bat</th><th>bowl</th><th>field</th><th>emerge</th><th>fair</th><th>catch</th></tr>'
@@ -58,8 +58,8 @@ app.post('/resi',function(req, res) {
       	}
       	row=row+'</tr>';
       }
-
-      str=link+str+row+'</table><br>';
+      //str=link+str;
+      str=str+row+'</table><br>';
       str=str+'<form action="/index.html"><input type="submit" value="Home"></form>';
       return res.send(h+str);
       //console.log(csvData);
