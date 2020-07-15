@@ -86,9 +86,9 @@ app.post('/check',function(req, res) {
         		flag=1;
         		data['val']='1';
         	} 
-        	console.log(data)
+        	//console.log(data)
         	data1.push(data);
-        	console.log(data1)  	  
+        	//votherconsole.log(data1)  	  
     })
     .on('end',function() {
         if(flag==1)
@@ -101,7 +101,7 @@ app.post('/check',function(req, res) {
 			});
 		    csvWriter.writeRecords(data1);
 
-    		return res.redirect('./vote.html');
+    		return res.redirect('./index.html');
     	}  
     });
 });
