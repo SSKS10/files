@@ -15,7 +15,7 @@ app.set('view engine', 'html');
 
 const url='https://github.com/SSKS10/SlamBook/blob/master/out.csv';
 app.get('*', (req, res)=>  {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(__dirname+ '/index.html');
 });
 app.post('/url',function(req, res) {
 	var json_data=req.body;
@@ -96,7 +96,7 @@ app.post('/check',function(req, res) {
     		//console.log('\n');
     		//console.log(data1);
     		res.redirect('./vote.html');
-    		
+
     		 const csvWriter = createCsvWriter({
 			 path: './out1.csv',
 			 header: ['name','code','val' ],

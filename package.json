@@ -26,5 +26,14 @@
     "example",
     "heroku"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SSKS10/SlamBook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SSKS10/SlamBook/issues"
+  },
+  "homepage": "https://github.com/SSKS10/SlamBook#readme"
 }
