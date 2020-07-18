@@ -95,14 +95,17 @@ app.post('/check',function(req, res) {
     	{
     		//console.log('\n');
     		//console.log(data1);
-    		const csvWriter = createCsvWriter({
-			  path: './out1.csv',
-			  header: ['name','code','val' ],
+    		res.redirect('./vote.html');
+    		
+    		 const csvWriter = createCsvWriter({
+			 path: './out1.csv',
+			 header: ['name','code','val' ],
 			});
 		    csvWriter.writeRecords(data1);
 
-    		return res.redirect('./vote.html');
     	}  
+    	else
+    		return res.redirect('/index.html');
     });
 });
 
