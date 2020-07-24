@@ -1,7 +1,8 @@
-// Simple-git without promise 
+var express = require('express');
+const app     = express();
+app.use(express.static(__dirname));
 const simpleGit = require('simple-git')();
 // Shelljs package for running shell tasks optional
-const shellJs = require('shelljs');
 // Simple Git with Promise for handling success and failure
 //const simpleGitPromise = require('simple-git/promise')();
 
@@ -18,7 +19,24 @@ simpleGit.add('.')
     .then(
        (addSuccess) => {
        	console.log('1');
-          console.log(addSuccess);
+        simpleGit.commit('Intial commit by simplegit')
+	   .then(
+		      (successCommit) => {
+		      	console.log('2');
+				        simpleGit.push('origin','master')
+				    .then((success) => {
+				    	console.log('3');
+				       console.log('repo successfully pushed');
+				    },(failed)=> {
+				       console.log('repo push failed');
+				 });  
+	     }, (failed) => {
+	        console.log('failed commmit');
+	 });
        }, (failedAdd) => {
           console.log('adding files failed');
     });
+
+
+
+  
