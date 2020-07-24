@@ -28,7 +28,7 @@ simpleGit.add('.')
 				    	console.log('3');
 				       console.log('repo successfully pushed');
 				    },(failed)=> {
-				       console.log('repo push failed');
+				       console.log(failed);
 				 });  
 	     }, (failed) => {
 	        console.log('failed commmit');
