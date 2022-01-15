@@ -12,7 +12,7 @@
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "request": "^2.88.2",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "simple-git": "^2.15.0"
   },
   "devDependencies": {},
